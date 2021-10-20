@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import BannerMenuItem from './BannerMenuItem';
+import BannerMenuItem from 'src/components/home-page/BannerMenuItem';
+import 'src/styles/banner-menu.scss'
 
 interface Banner {
     title: string;
@@ -47,8 +48,8 @@ const BannerMenu = () => {
         return null;
     }
     return (
-        <div>
-            {sections.map(({title, imageUrl, id}) => <BannerMenuItem key={id} imageUrl={imageUrl} title={title} />)}
+        <div className='banner-container'>
+            {sections.map(({title, imageUrl, id, size}) => <BannerMenuItem key={id} imageUrl={imageUrl} title={title} size={size} />)}
         </div>
     )
 }
