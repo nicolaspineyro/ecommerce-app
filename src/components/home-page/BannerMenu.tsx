@@ -49,7 +49,13 @@ const BannerMenu = () => {
     }
     return (
         <div className='banner-container'>
-            {sections.map(({title, imageUrl, id, size}) => <BannerMenuItem key={id} imageUrl={imageUrl} title={title} size={size} />)}
+            {sections.map(({ title, imageUrl, id, size }) =>
+                <BannerMenuItem
+                    key={id}
+                    imageUrl={imageUrl}
+                    title={title} 
+                    size={size}
+                />)}
         </div>
     )
 }

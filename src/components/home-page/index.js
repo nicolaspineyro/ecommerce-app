@@ -1,1 +1,1 @@
-export {default as BannerMenu} from './BannerMenu';
+export { default as BannerMenu } from "./BannerMenu";
