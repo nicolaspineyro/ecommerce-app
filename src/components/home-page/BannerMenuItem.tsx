@@ -12,7 +12,7 @@ const BannerMenuItem = ({ title, imageUrl, size }: BannerMenuItemProps) => {
     const history = useHistory();
 
     return (
-        <div className={`item-container`} onClick={() => history.push(`/products/${title.toLowerCase()}`)}>
+        <div className={`item-container`} onClick={() => history.push(`/shop/${title.toLowerCase()}`)}>
             <img src={imageUrl} className='background-image' />
             <div className='item-content'>
                 <h1>{title.toUpperCase()}</h1>
