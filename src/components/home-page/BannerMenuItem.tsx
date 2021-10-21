@@ -1,4 +1,5 @@
 import 'src/styles/banner-menu-item.scss'
+import { useHistory } from 'react-router-dom';
 
 interface BannerMenuItemProps {
     key: number;
@@ -8,11 +9,11 @@ interface BannerMenuItemProps {
 }
 
 const BannerMenuItem = ({ title, imageUrl, size }: BannerMenuItemProps) => {
-    console.log(size)
+    const history = useHistory();
 
     return (
-        <div className={`item-container`}>
-            <img src={imageUrl} className='background-image'/>
+        <div className={`item-container`} onClick={() => history.push(`/products/${title.toLowerCase()}`)}>
+            <img src={imageUrl} className='background-image' />
             <div className='item-content'>
                 <h1>{title.toUpperCase()}</h1>
                 <p>SHOP NOW</p>
