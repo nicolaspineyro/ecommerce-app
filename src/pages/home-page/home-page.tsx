@@ -1,9 +1,13 @@
 import { BannerMenu } from 'src/components/home-page';
-import 'src/styles/home-page.scss';
+import  Styles from 'src/styles/home-page.module.scss';
+import { useHistory } from 'react-router';
 
 const HomePage = () => {
+    const history = useHistory();
+
     return (
-        <div className='container'>
+        <div className={Styles['container']}>
+            <h2 onClick={() => history.push('/shop')}>shop page</h2>
             <BannerMenu />
         </div>
     )

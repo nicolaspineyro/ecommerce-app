@@ -6,7 +6,7 @@ interface SectionPreview {
     id: number;
     title: string;
     routeName: string;
-    items: Array<Object>;
+    items: Array<any>;
 }
 
 const Shop = () => {
@@ -18,12 +18,17 @@ const Shop = () => {
     if (!shopContent || shopContent.length === 0) {
         return null;
     }
-
-    console.log(shopContent)
-
     return (
         <div>
-            {/* {shopContent.map(({ id, title, items }) => <CardsRow key={id} title={title} items={items} />)} */}
+            <h1>Collections</h1>
+            {shopContent.map(({ id, title, items }) => {
+                const cardsProps = {
+                    key: id,
+                    title,
+                    items
+                }
+                return (<CardsRow {...cardsProps} />)
+            })}
         </div>
     )
 }
