@@ -13,8 +13,8 @@ const CardItem = ({ imageUrl, name, price }: CardItemProps) => {
         <div className={Styles['item-container']}>
             <img src={imageUrl} className={Styles['item-image']} />
             <div className={Styles['item-info']}>
-                <h3>{name}</h3>
-                <p>${price}</p>
+                <span>{name}</span>
+                <span>${price}</span>
             </div>
         </div>
     )

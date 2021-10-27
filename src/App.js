@@ -1,13 +1,18 @@
-import { HomePage, Shop, Collection } from "./pages";
+import { Route, Switch } from "react-router-dom";
+import { HomePage, Shop, Collection, SignInPage } from "src/pages";
+import { Header } from "src/components/ui";
 import "src/styles/global.scss";
-import { Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="body">
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/shop" component={Shop} />
-      <Route path="/shop/:item" component={Collection} />
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/shop" component={Shop} />
+        <Route path="/shop/:item" component={Collection} />
+        <Route path="/signin" component={SignInPage} />
+      </Switch>
     </div>
   );
 };
