@@ -7,7 +7,6 @@ const HomePage = () => {
 
     return (
         <div className={Styles['container']}>
-            <h2 onClick={() => history.push('/shop')}>shop page</h2>
             <BannerMenu />
         </div>
     )

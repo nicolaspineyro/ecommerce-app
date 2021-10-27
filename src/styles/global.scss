@@ -1,8 +1,13 @@
 .body {
     position: relative;
     overflow-x: hidden;
-    margin: 2.5%;
+    padding: 2.5% 10%;
     font-family: 'Open Sans';
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 

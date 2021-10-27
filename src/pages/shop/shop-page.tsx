@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardsRow } from 'src/components/ui';
-import { SHOP_DATA } from './shopData';
+import { SHOP_DATA } from 'src/utils/shopData'
 
 interface SectionPreview {
     id: number;

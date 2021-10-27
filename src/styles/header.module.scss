@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4%;
+  align-items: center;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2.5%;
+    font-size: larger;
+}
+
+.menu-item {
+    margin: 0 10%
+}
