@@ -1,5 +1,7 @@
 import { FormEvent, useState } from 'react';
 import FormInput from './FormInput';
+import Styles from 'src/styles/sign-in.module.scss';
+import { Button } from 'src/components/ui';
 
 const SignIn = () => {
     const [form, setForm] = useState({
@@ -21,25 +23,27 @@ const SignIn = () => {
     }
 
     return (
-        <div>
+        <div className={Styles['container']}>
             <h1>Already have an account?</h1>
             <span>Sign in with your email and password</span>
             <form onSubmit={e => submitForm(e)}>
                 <FormInput
                     type='text'
-                    id='email'
+                    label='email'
                     value={form['email']}
                     name='email'
                     handleChange={handleChange}
                 />
                 <FormInput
                     type='password'
-                    id='password'
+                    label='password'
                     value={form['password']}
                     name='password'
                     handleChange={handleChange}
                 />
-                <input type='submit' />
+                <Button type='submit'>
+                    Log In
+                </Button>
             </form>
         </div>
     )
