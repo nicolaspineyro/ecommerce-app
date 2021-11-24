@@ -15,7 +15,7 @@ const formInput = ({ type, label, value, name, handleChange }: FormInputProps) =
     }
 
     return (
-        <div className={Styles['group']}>
+        <div className={Styles.group}>
             <input
                 {...otherProps}
                 onChange={handleChange}
