@@ -1,6 +1,11 @@
 .container {
-    width: 30vh;
+    width: 40vh;
     display: flex;
     flex-direction: column;
 }
 
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

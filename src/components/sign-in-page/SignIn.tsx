@@ -2,6 +2,8 @@ import { FormEvent, useState } from 'react';
 import FormInput from './FormInput';
 import Styles from 'src/styles/sign-in.module.scss';
 import { Button } from 'src/components/ui';
+import { auth, provider } from 'src/utils/firebase-utils';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const SignIn = () => {
     const [form, setForm] = useState({
@@ -22,28 +24,43 @@ const SignIn = () => {
         })
     }
 
+    const signInWithGoogle = () => {
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential?.accessToken;
+            const user = result.user;
+        })
+        .catch(error => console.log(error))
+    }
+
     return (
-        <div className={Styles['container']}>
+        <div className={Styles.container}>
             <h1>Already have an account?</h1>
             <span>Sign in with your email and password</span>
             <form onSubmit={e => submitForm(e)}>
                 <FormInput
                     type='text'
                     label='email'
-                    value={form['email']}
+                    value={form.email}
                     name='email'
                     handleChange={handleChange}
                 />
                 <FormInput
                     type='password'
                     label='password'
-                    value={form['password']}
+                    value={form.password}
                     name='password'
                     handleChange={handleChange}
                 />
-                <Button type='submit'>
-                    Log In
-                </Button>
+                <div className={Styles['buttons-container']}>
+                    <Button type='submit'>
+                        Log In
+                    </Button>
+                    <Button onClick={signInWithGoogle} type='submit'>
+                        Sign In With Google
+                    </Button>
+                </div>
             </form>
         </div>
     )

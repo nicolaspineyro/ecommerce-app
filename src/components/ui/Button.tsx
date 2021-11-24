@@ -1,17 +1,17 @@
-import { ReactChild } from "react";
+import Styles from 'src/styles/button.module.scss';
+import { ReactChild } from 'react';
 
 interface ButtonProps {
-    type: "button" | "submit" | "reset" | undefined;
+    type?: "button" | "submit" | "reset" | undefined;
     children: ReactChild;
+    onClick?: (e: any) => void;
 }
 
-const Button = ({ children, type }: ButtonProps) => {
-
-
+const Button = ({ children, ...otherProps }: ButtonProps) => {
     return (
-            <button type={type}>
-                {children}
-            </button>
+        <button className={Styles.container} {...otherProps}>
+            {children}
+        </button>
     )
 
 }
